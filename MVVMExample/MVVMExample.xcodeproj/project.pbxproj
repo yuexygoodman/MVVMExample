@@ -27,10 +27,22 @@
 		80A19D042112DC3D0062BA07 /* FriendViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A19CE12112DC3D0062BA07 /* FriendViewCell.xib */; };
 		80A19D052112DC3D0062BA07 /* FriendPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CE32112DC3D0062BA07 /* FriendPresenter.m */; };
 		80A19D062112DC3D0062BA07 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CE82112DC3D0062BA07 /* LoginModel.m */; };
-		80A19D072112DC3D0062BA07 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CEC2112DC3D0062BA07 /* LoginViewController.m */; };
-		80A19D082112DC3D0062BA07 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A19CEE2112DC3D0062BA07 /* LoginViewController.xib */; };
-		80A19D092112DC3D0062BA07 /* LoginPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CF12112DC3D0062BA07 /* LoginPresenter.m */; };
+		80A19D082112DC3D0062BA07 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A19CEE2112DC3D0062BA07 /* LoginView.xib */; };
 		80A19D0A2112DC3D0062BA07 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CF62112DC3D0062BA07 /* BaseModel.m */; };
+		80A19D0F2112E6170062BA07 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D0E2112E6170062BA07 /* LoginVM.m */; };
+		80A19D122113FE310062BA07 /* LoginDataConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D112113FE310062BA07 /* LoginDataConverter.m */; };
+		80A19D1621183AEE0062BA07 /* VMCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D1521183AEE0062BA07 /* VMCommand.m */; };
+		80A19D1C211842A80062BA07 /* VBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D1B211842A80062BA07 /* VBehavior.m */; };
+		80A19D1F211843030062BA07 /* V2MBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D1E211843030062BA07 /* V2MBinder.m */; };
+		80A19D222119A5090062BA07 /* VProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D212119A5090062BA07 /* VProperty.m */; };
+		80A19D25211ABFC50062BA07 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D24211ABFC50062BA07 /* LoginView.m */; };
+		80A19D28211AD9700062BA07 /* VLoadingProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D27211AD9700062BA07 /* VLoadingProperty.m */; };
+		80A19D2B211ADEF80062BA07 /* VAlertProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D2A211ADEF80062BA07 /* VAlertProperty.m */; };
+		80A19D2E211AE25A0062BA07 /* VNavProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D2D211AE25A0062BA07 /* VNavProperty.m */; };
+		80A19D31211AEC700062BA07 /* VEditBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D30211AEC700062BA07 /* VEditBehavior.m */; };
+		80A19D34211AF0420062BA07 /* VTouchBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D33211AF0420062BA07 /* VTouchBehavior.m */; };
+		80A19D37211AF0970062BA07 /* UIButton+behavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D36211AF0970062BA07 /* UIButton+behavior.m */; };
+		80A19D3E211C33350062BA07 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19D3D211C33350062BA07 /* LogViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,16 +106,38 @@
 		80A19CE82112DC3D0062BA07 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		80A19CE92112DC3D0062BA07 /* ILoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILoginModel.h; sourceTree = "<group>"; };
 		80A19CEA2112DC3D0062BA07 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
-		80A19CEC2112DC3D0062BA07 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		80A19CED2112DC3D0062BA07 /* ILoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILoginView.h; sourceTree = "<group>"; };
-		80A19CEE2112DC3D0062BA07 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		80A19CEF2112DC3D0062BA07 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		80A19CF12112DC3D0062BA07 /* LoginPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPresenter.m; sourceTree = "<group>"; };
-		80A19CF22112DC3D0062BA07 /* ILoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILoginPresenter.h; sourceTree = "<group>"; };
-		80A19CF32112DC3D0062BA07 /* LoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPresenter.h; sourceTree = "<group>"; };
+		80A19CEE2112DC3D0062BA07 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		80A19CF52112DC3D0062BA07 /* IModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModel.h; sourceTree = "<group>"; };
 		80A19CF62112DC3D0062BA07 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		80A19CF72112DC3D0062BA07 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		80A19D0D2112E6170062BA07 /* LoginVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVM.h; sourceTree = "<group>"; };
+		80A19D0E2112E6170062BA07 /* LoginVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVM.m; sourceTree = "<group>"; };
+		80A19D102113FE310062BA07 /* LoginDataConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginDataConverter.h; sourceTree = "<group>"; };
+		80A19D112113FE310062BA07 /* LoginDataConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginDataConverter.m; sourceTree = "<group>"; };
+		80A19D1421183AEE0062BA07 /* VMCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMCommand.h; sourceTree = "<group>"; };
+		80A19D1521183AEE0062BA07 /* VMCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMCommand.m; sourceTree = "<group>"; };
+		80A19D1A211842A80062BA07 /* VBehavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBehavior.h; sourceTree = "<group>"; };
+		80A19D1B211842A80062BA07 /* VBehavior.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBehavior.m; sourceTree = "<group>"; };
+		80A19D1D211843030062BA07 /* V2MBinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2MBinder.h; sourceTree = "<group>"; };
+		80A19D1E211843030062BA07 /* V2MBinder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2MBinder.m; sourceTree = "<group>"; };
+		80A19D202119A5090062BA07 /* VProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VProperty.h; sourceTree = "<group>"; };
+		80A19D212119A5090062BA07 /* VProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VProperty.m; sourceTree = "<group>"; };
+		80A19D23211ABFC50062BA07 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		80A19D24211ABFC50062BA07 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		80A19D26211AD9700062BA07 /* VLoadingProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VLoadingProperty.h; sourceTree = "<group>"; };
+		80A19D27211AD9700062BA07 /* VLoadingProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VLoadingProperty.m; sourceTree = "<group>"; };
+		80A19D29211ADEF80062BA07 /* VAlertProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAlertProperty.h; sourceTree = "<group>"; };
+		80A19D2A211ADEF80062BA07 /* VAlertProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAlertProperty.m; sourceTree = "<group>"; };
+		80A19D2C211AE25A0062BA07 /* VNavProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VNavProperty.h; sourceTree = "<group>"; };
+		80A19D2D211AE25A0062BA07 /* VNavProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VNavProperty.m; sourceTree = "<group>"; };
+		80A19D2F211AEC700062BA07 /* VEditBehavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VEditBehavior.h; sourceTree = "<group>"; };
+		80A19D30211AEC700062BA07 /* VEditBehavior.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VEditBehavior.m; sourceTree = "<group>"; };
+		80A19D32211AF0420062BA07 /* VTouchBehavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VTouchBehavior.h; sourceTree = "<group>"; };
+		80A19D33211AF0420062BA07 /* VTouchBehavior.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VTouchBehavior.m; sourceTree = "<group>"; };
+		80A19D35211AF0970062BA07 /* UIButton+behavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+behavior.h"; sourceTree = "<group>"; };
+		80A19D36211AF0970062BA07 /* UIButton+behavior.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+behavior.m"; sourceTree = "<group>"; };
+		80A19D3C211C33350062BA07 /* LogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		80A19D3D211C33350062BA07 /* LogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +192,7 @@
 				80A19CC62112DC3D0062BA07 /* Data */,
 				80A19CE62112DC3D0062BA07 /* Login */,
 				80A19CCF2112DC3D0062BA07 /* Main */,
+				80A19D1321183AA90062BA07 /* VM-Base */,
 				80A19CF42112DC3D0062BA07 /* Model-Base */,
 				80A19C932112DADE0062BA07 /* AppDelegate.h */,
 				80A19C942112DADE0062BA07 /* AppDelegate.m */,
@@ -204,6 +239,7 @@
 		80A19CCF2112DC3D0062BA07 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				80A19D0C2112DFC10062BA07 /* VM */,
 				80A19CD02112DC3D0062BA07 /* M */,
 				80A19CD42112DC3D0062BA07 /* V */,
 				80A19CE22112DC3D0062BA07 /* P */,
@@ -254,9 +290,10 @@
 		80A19CE62112DC3D0062BA07 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				80A19D38211BE77F0062BA07 /* C */,
+				80A19D0B2112DFA80062BA07 /* VM */,
 				80A19CE72112DC3D0062BA07 /* M */,
 				80A19CEB2112DC3D0062BA07 /* V */,
-				80A19CF02112DC3D0062BA07 /* P */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -274,22 +311,11 @@
 		80A19CEB2112DC3D0062BA07 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				80A19CEC2112DC3D0062BA07 /* LoginViewController.m */,
-				80A19CED2112DC3D0062BA07 /* ILoginView.h */,
-				80A19CEE2112DC3D0062BA07 /* LoginViewController.xib */,
-				80A19CEF2112DC3D0062BA07 /* LoginViewController.h */,
+				80A19CEE2112DC3D0062BA07 /* LoginView.xib */,
+				80A19D23211ABFC50062BA07 /* LoginView.h */,
+				80A19D24211ABFC50062BA07 /* LoginView.m */,
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		80A19CF02112DC3D0062BA07 /* P */ = {
-			isa = PBXGroup;
-			children = (
-				80A19CF12112DC3D0062BA07 /* LoginPresenter.m */,
-				80A19CF22112DC3D0062BA07 /* ILoginPresenter.h */,
-				80A19CF32112DC3D0062BA07 /* LoginPresenter.h */,
-			);
-			path = P;
 			sourceTree = "<group>";
 		};
 		80A19CF42112DC3D0062BA07 /* Model-Base */ = {
@@ -300,6 +326,60 @@
 				80A19CF72112DC3D0062BA07 /* BaseModel.h */,
 			);
 			path = "Model-Base";
+			sourceTree = "<group>";
+		};
+		80A19D0B2112DFA80062BA07 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				80A19D0D2112E6170062BA07 /* LoginVM.h */,
+				80A19D0E2112E6170062BA07 /* LoginVM.m */,
+				80A19D102113FE310062BA07 /* LoginDataConverter.h */,
+				80A19D112113FE310062BA07 /* LoginDataConverter.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		80A19D0C2112DFC10062BA07 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		80A19D1321183AA90062BA07 /* VM-Base */ = {
+			isa = PBXGroup;
+			children = (
+				80A19D1421183AEE0062BA07 /* VMCommand.h */,
+				80A19D1521183AEE0062BA07 /* VMCommand.m */,
+				80A19D1A211842A80062BA07 /* VBehavior.h */,
+				80A19D1B211842A80062BA07 /* VBehavior.m */,
+				80A19D1D211843030062BA07 /* V2MBinder.h */,
+				80A19D1E211843030062BA07 /* V2MBinder.m */,
+				80A19D202119A5090062BA07 /* VProperty.h */,
+				80A19D212119A5090062BA07 /* VProperty.m */,
+				80A19D26211AD9700062BA07 /* VLoadingProperty.h */,
+				80A19D27211AD9700062BA07 /* VLoadingProperty.m */,
+				80A19D29211ADEF80062BA07 /* VAlertProperty.h */,
+				80A19D2A211ADEF80062BA07 /* VAlertProperty.m */,
+				80A19D2C211AE25A0062BA07 /* VNavProperty.h */,
+				80A19D2D211AE25A0062BA07 /* VNavProperty.m */,
+				80A19D2F211AEC700062BA07 /* VEditBehavior.h */,
+				80A19D30211AEC700062BA07 /* VEditBehavior.m */,
+				80A19D32211AF0420062BA07 /* VTouchBehavior.h */,
+				80A19D33211AF0420062BA07 /* VTouchBehavior.m */,
+				80A19D35211AF0970062BA07 /* UIButton+behavior.h */,
+				80A19D36211AF0970062BA07 /* UIButton+behavior.m */,
+			);
+			path = "VM-Base";
+			sourceTree = "<group>";
+		};
+		80A19D38211BE77F0062BA07 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				80A19D3C211C33350062BA07 /* LogViewController.h */,
+				80A19D3D211C33350062BA07 /* LogViewController.m */,
+			);
+			path = C;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,7 +489,7 @@
 				80A19D042112DC3D0062BA07 /* FriendViewCell.xib in Resources */,
 				80A19CF82112DC3D0062BA07 /* 请先看看我.md in Resources */,
 				80A19C9D2112DAE00062BA07 /* Assets.xcassets in Resources */,
-				80A19D082112DC3D0062BA07 /* LoginViewController.xib in Resources */,
+				80A19D082112DC3D0062BA07 /* LoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,21 +515,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				80A19D0A2112DC3D0062BA07 /* BaseModel.m in Sources */,
+				80A19D1F211843030062BA07 /* V2MBinder.m in Sources */,
+				80A19D2B211ADEF80062BA07 /* VAlertProperty.m in Sources */,
+				80A19D122113FE310062BA07 /* LoginDataConverter.m in Sources */,
+				80A19D34211AF0420062BA07 /* VTouchBehavior.m in Sources */,
 				80A19D002112DC3D0062BA07 /* MainViewController.m in Sources */,
+				80A19D0F2112E6170062BA07 /* LoginVM.m in Sources */,
+				80A19D222119A5090062BA07 /* VProperty.m in Sources */,
 				80A19CFF2112DC3D0062BA07 /* FriendGridView.m in Sources */,
 				80A19D052112DC3D0062BA07 /* FriendPresenter.m in Sources */,
+				80A19D3E211C33350062BA07 /* LogViewController.m in Sources */,
+				80A19D2E211AE25A0062BA07 /* VNavProperty.m in Sources */,
+				80A19D37211AF0970062BA07 /* UIButton+behavior.m in Sources */,
+				80A19D31211AEC700062BA07 /* VEditBehavior.m in Sources */,
 				80A19CFA2112DC3D0062BA07 /* User.m in Sources */,
 				80A19CFD2112DC3D0062BA07 /* FriendModel.m in Sources */,
+				80A19D1621183AEE0062BA07 /* VMCommand.m in Sources */,
 				80A19CFE2112DC3D0062BA07 /* FriendListView.m in Sources */,
-				80A19D092112DC3D0062BA07 /* LoginPresenter.m in Sources */,
 				80A19D022112DC3D0062BA07 /* FriendViewItem.m in Sources */,
+				80A19D1C211842A80062BA07 /* VBehavior.m in Sources */,
 				80A19CFC2112DC3D0062BA07 /* Friend.m in Sources */,
-				80A19D072112DC3D0062BA07 /* LoginViewController.m in Sources */,
 				80A19CF92112DC3D0062BA07 /* Me.m in Sources */,
+				80A19D25211ABFC50062BA07 /* LoginView.m in Sources */,
 				80A19CFB2112DC3D0062BA07 /* ModelData.m in Sources */,
 				80A19CA32112DAE00062BA07 /* main.m in Sources */,
 				80A19D032112DC3D0062BA07 /* FriendViewCell.m in Sources */,
 				80A19C952112DADE0062BA07 /* AppDelegate.m in Sources */,
+				80A19D28211AD9700062BA07 /* VLoadingProperty.m in Sources */,
 				80A19D062112DC3D0062BA07 /* LoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

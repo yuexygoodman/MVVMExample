@@ -1,55 +1,29 @@
 //
-//  LoginPresenter.m
-//  MVPExample
+//  LoginVM.m
+//  MVVMExample
 //
-//  Created by Good Man on 2018/6/22.
-//  Copyright © 2018年 Good Man. All rights reserved.
+//  Created by 岳潇洋 on 2018/8/2.
+//  Copyright © 2018年 岳潇洋. All rights reserved.
 //
 
-#import "LoginPresenter.h"
+#import "LoginVM.h"
 #import "LoginModel.h"
 
-@interface LoginPresenter()
+@interface LoginVM()
 
-@property(weak,nonatomic)id<ILoginView> loginView;
 @property(weak,nonatomic)id<ILoginModel> loginModel;
 
 @end
 
-@implementation LoginPresenter
+@implementation LoginVM
 
-///MARK: 实现ILoginPresenter
-
-- (void)setLoginView:(id<ILoginView>)loginView {
-    _loginView=loginView;
-}
-
+///MARK: 开始
 - (void)start {
-    NSString * account=nil;
-    NSString * pwd=nil;
+    NSString * account = nil;
+    NSString * pwd = nil;
     [self getLastAccount:&account pwd:&pwd];
-    [self.loginView loadWithLastAccount:account pwd:pwd];
-}
-
-//登陆逻辑
-- (void)onLoginWithAccount:(NSString *)account pwd:(NSString *)pwd {
-    NSString * err=nil;
-    if (![self validateAccount:account error:&err] || ![self validatePwd:pwd error:&err]) {
-        [self.loginView showLoginError:err];
-    }
-    else {
-        [self.loginView showLoading];
-        [self.loginModel loginToServer:account pwd:pwd handler:^(NSError *err) {
-            [self.loginView hideLoading];
-            if (err) {
-                [self.loginView showLoginError:err.description];
-            }
-            else{
-                [self setLastAccount:account pwd:pwd];
-                [self.loginView navToMain];
-            }
-        }];
-    }
+    self.account = account;
+    self.password = pwd;
 }
 
 ///MARK: 内部方法
@@ -68,6 +42,7 @@
 
 //验证账号
 - (BOOL)validateAccount:(NSString *)account error:(NSString **)err {
+    if (!account)return NO;
     NSRegularExpression * regular=[NSRegularExpression regularExpressionWithPattern:@"^[0-9]{11}$" options:0 error:nil];
     if ([regular numberOfMatchesInString:account options:0 range:NSMakeRange(0, account.length)]>0) {
         return YES;
@@ -80,6 +55,7 @@
 
 //验证密码
 - (BOOL)validatePwd:(NSString *)pwd error:(NSString **)err {
+    if (!pwd)return NO;
     NSRegularExpression * regular=[NSRegularExpression regularExpressionWithPattern:@"^[^\u4e00-\u9fa5]{6,11}$" options:0 error:nil];
     if ([regular numberOfMatchesInString:pwd options:0 range:NSMakeRange(0, pwd.length)]>0) {
         return YES;
@@ -90,6 +66,27 @@
     }
 }
 
+//登陆
+- (void)log_in {
+    NSString * err=nil;
+    if (![self validateAccount:self.account error:&err] || ![self validatePwd:self.password error:&err]) {
+        self.logErr = err;
+    }
+    else {
+        self.logging=YES;
+        [self.loginModel loginToServer:self.account pwd:self.password handler:^(NSError *err) {
+            self.logging=NO;
+            if (err) {
+                self.logErr = err.description;
+            }
+            else{
+                self.logErr = nil;
+                self.main = [MainViewController new];
+            }
+        }];
+    }
+}
+
 //MARK: 懒加载
 
 - (id<ILoginModel>)loginModel {
@@ -97,6 +94,16 @@
         _loginModel=[LoginModel shared];//如果想切换底层的登陆模块，修改这里
     }
     return _loginModel;
+}
+
+- (VMCommand *)login {
+    if (!_login) {
+        typeof(self) weakSelf = self;
+        _login = [[VMCommand alloc] initWithBlock:^(id data) {
+            [weakSelf log_in];
+        }];
+    }
+    return _login;
 }
 
 @end

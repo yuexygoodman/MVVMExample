@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
+#import "LogViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +23,7 @@
     UINavigationController * navi=[UINavigationController new];
     self.window.rootViewController=navi;
     
-    navi.viewControllers=@[[[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil]];
+    navi.viewControllers=@[[LogViewController new]];
     [self.window makeKeyAndVisible];
     
     return YES;
