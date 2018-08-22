@@ -7,6 +7,7 @@
 //
 
 #import "VBehavior.h"
+#import <UIKit/UIKit.h>
 
 @interface VBehavior()
 
@@ -21,6 +22,7 @@
 }
 
 - (void)invokeWithData:(id)data {
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
     if (self.command) {
         [self.command executeWithData:data];
     }
