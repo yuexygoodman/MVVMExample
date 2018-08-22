@@ -73,14 +73,14 @@
     id newVal = change[NSKeyValueChangeNewKey]==[NSNull null]?nil:change[NSKeyValueChangeNewKey];
     if (binding.view == object) {
         id val = [binding.vm valueForKeyPath:binding.mappings[keyPath]];
-        if ([val isEqual:newVal])return;
+        if ([val isEqual:newVal] || (val==nil && newVal==nil))return;
         [binding.vm setValue:newVal forKeyPath:binding.mappings[keyPath]];
     }
     else {
         NSInteger index=[binding.mappings.allValues indexOfObject:keyPath];
         NSString * key = binding.mappings.allKeys[index];
         id val = [binding.view valueForKeyPath:key];
-        if ([val isEqual:newVal])return;
+        if ([val isEqual:newVal] || (val==nil && newVal==nil))return;
         [binding.view setValue:newVal forKeyPath:key];
     }
 }
