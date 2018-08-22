@@ -14,9 +14,10 @@
     NSAssert(value==nil || [value isKindOfClass:[NSString class]], @"this property just support string value");
     [super setValue:value];
     if (value) {
+        __weak typeof(self) weakSelf=self;
         UIAlertController * alert=[UIAlertController alertControllerWithTitle:self.title message:value preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            _value=nil;
+            weakSelf.value=nil;
         }]];
         [self.vc presentViewController:alert animated:YES completion:nil];
     }
