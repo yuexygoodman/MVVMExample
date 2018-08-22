@@ -25,6 +25,12 @@
         if (view) {
             [self addSubview:view];
             view.frame=self.bounds;
+            
+            //初始化属性和行为
+            [self logging];
+            [self logErr];
+            [self toMain];
+            [self editEnabled];
         }
     }
     return self;

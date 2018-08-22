@@ -17,7 +17,7 @@ const char kBehaviorTouchKey;
     VTouchBehavior * touch=objc_getAssociatedObject(self, &kBehaviorTouchKey);
     if (!touch) {
         touch = [[VTouchBehavior alloc] initWithControl:self touchType:UIControlEventTouchUpInside];
-        objc_setAssociatedObject(self, kBehaviorTouchKey, touch, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, &kBehaviorTouchKey, touch, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return touch;
 }
