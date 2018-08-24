@@ -15,9 +15,4 @@
     // Initialization code
 }
 
-- (void)configWithFriend:(Friend *)fri {
-    self.headView.image=fri.headImg;
-    self.nameLabel.text=fri.nickName;
-}
-
 @end

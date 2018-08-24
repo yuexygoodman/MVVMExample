@@ -13,6 +13,4 @@
 @property (strong, nonatomic) IBOutlet UIImageView *headView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
-- (void)configWithFriend:(Friend *)fri;
-
 @end

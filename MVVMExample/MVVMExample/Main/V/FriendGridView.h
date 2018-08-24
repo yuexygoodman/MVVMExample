@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IFriendView.h"
+#import "VDataGridProperty.h"
+#import "VAlertProperty.h"
+#import "VConfirmProperty.h"
+#import "VSelectBehavior.h"
 
-@interface FriendGridView : UICollectionView<IFriendView>
+@interface FriendGridView : UICollectionView
 
 - (id)initWithController:(UIViewController *)viewController;
+
+@property(strong,nonatomic)VDataGridProperty * datalist;
+
+@property(strong,nonatomic)VAlertProperty * rmError;
+
+@property(strong,nonatomic)VConfirmProperty * confirm;
 
 @end

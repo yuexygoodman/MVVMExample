@@ -8,9 +8,14 @@
 
 #import "VProperty.h"
 #import <UIKit/UIKit.h>
+#import "VSelectBehavior.h"
 
 @interface VDataGridProperty : VProperty
 
 @property(weak,nonatomic)UICollectionView * gridView;
+
+@property(strong,nonatomic)NSString * itemNib;
+
+@property(strong,nonatomic)VSelectBehavior * select;
 
 @end

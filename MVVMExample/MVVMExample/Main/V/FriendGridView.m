@@ -9,13 +9,9 @@
 #import "FriendGridView.h"
 #import "FriendViewItem.h"
 
-@interface FriendGridView()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface FriendGridView()
 
 @property(weak,nonatomic)UIViewController * viewController;
-
-@property(weak,nonatomic)id<IFriendPresenter> presenter;
-
-@property(strong,nonatomic)NSMutableArray * friends;
 
 @end
 
@@ -29,69 +25,39 @@
     layout.minimumInteritemSpacing=10;
     if (self=[self initWithFrame:CGRectZero collectionViewLayout:layout]) {
         _viewController=viewController;
-        self.delegate=self;
-        self.dataSource=self;
-        [self registerNib:[UINib nibWithNibName:@"FriendViewItem" bundle:nil] forCellWithReuseIdentifier:@"FriendViewItem"];
         self.backgroundColor=[UIColor whiteColor];
     }
     return self;
 }
 
-///MARK: 实现 IFriendView
-- (void)setPresenter:(id<IFriendPresenter>)presenter {
-    _presenter=presenter;
-}
+///MARK: 属性
 
-- (void)loadWithFriends:(NSArray<Friend *> *)friends {
-    _friends=[friends mutableCopy];
-    [self reloadData];
-}
-
-- (void)confirmFriend:(Friend *)fri msg:(NSString *)msg {
-    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"再次确认" message:msg preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self.presenter onSureRemoveFriend:fri];
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-    [self.viewController presentViewController:alert animated:YES completion:nil];
-}
-
-- (void)unShowingForFriend:(Friend *)fri {
-    [_friends removeObject:fri];
-    [self reloadData];
-}
-
-- (void)showRemoveError:(NSString *)msg {
-    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"错误" message:msg preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-    [self.viewController presentViewController:alert animated:YES completion:nil];
-}
-
-///MARK:实现 UICollectionViewDelegate,UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.friends.count;
-}
-
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FriendViewItem * itemView=[collectionView dequeueReusableCellWithReuseIdentifier:@"FriendViewItem" forIndexPath:indexPath];
-    if (itemView.gestureRecognizers.count==0) {
-        itemView.userInteractionEnabled=YES;
-        UILongPressGestureRecognizer * longtap=[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(selected_item:)];
-        [itemView addGestureRecognizer:longtap];
+- (VDataGridProperty *)datalist {
+    if (!_datalist) {
+        _datalist = [VDataGridProperty new];
+        _datalist.gridView = self;
+        _datalist.itemNib = @"FriendViewItem";
+        _datalist.select = [VSelectBehavior new];
     }
-    [itemView configWithFriend:self.friends[indexPath.row]];
-    return itemView;
+    return _datalist;
 }
 
-///MARK: 用户事件
-- (void)selected_item:(UIGestureRecognizer *)sender {
-    NSIndexPath * indexPath=[self indexPathForCell:(UICollectionViewCell *)sender.view];
-    UIAlertController * sheet=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [sheet addAction:[UIAlertAction actionWithTitle:@"删除朋友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self.presenter onRemoveFriend:self.friends[indexPath.row]];
-    }]];
-    [sheet addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-    [self.viewController presentViewController:sheet animated:YES completion:nil];
+- (VAlertProperty *)rmError {
+    if (!_rmError) {
+        _rmError = [VAlertProperty new];
+        _rmError.vc = self.viewController;
+        _rmError.title = @"删除错误";
+    }
+    return _rmError;
+}
+
+- (VConfirmProperty *)confirm {
+    if (!_confirm) {
+        _confirm = [VConfirmProperty new];
+        _confirm.vc = self.viewController;
+        _confirm.title = @"再次确认";
+    }
+    return _confirm;
 }
 
 @end
