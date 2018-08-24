@@ -14,6 +14,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
 
-- (void)configWithData:(Friend *)fri;
-
 @end
