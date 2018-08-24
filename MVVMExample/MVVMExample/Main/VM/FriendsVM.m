@@ -8,6 +8,7 @@
 
 #import "FriendsVM.h"
 #import "FriendModel.h"
+#import "V2MBinder.h"
 
 @interface FriendVM()
 
@@ -56,6 +57,8 @@
         else{
             NSMutableArray * muti = [self.friends mutableCopy];
             [muti removeObject:self.onrm];
+            [[V2MBinder shared] unBind:self.onrm];
+            self.onrm=nil;
             self.friends = [muti copy];
         }
     }];
@@ -85,7 +88,7 @@
     if (!_rm_hard) {
         __weak typeof(self) weakSelf = self;
         _rm_hard = [[VMCommand alloc] initWithBlock:^(id data) {
-            [weakSelf onrm];
+            [weakSelf sureRM];
         }];
     }
     return _rm_hard;

@@ -11,6 +11,8 @@
 #import "FriendGridView.h"
 #import "V2MBinder.h"
 #import "FriendsVM.h"
+#import "FriendViewCell.h"
+#import "FriendViewItem.h"
 
 @interface MainViewController ()
 
@@ -37,7 +39,6 @@
     if (!_listView) {
         _listView = [[FriendListView alloc] initWithController:self];
         _listView.frame=self.view.bounds;
-        _listView.hidden=YES;
     }
     return _listView;
 }
@@ -46,6 +47,7 @@
     if (!_gridView) {
         _gridView = [[FriendGridView alloc] initWithController:self];
         _gridView.frame=self.view.bounds;
+        _gridView.hidden=YES;
     }
     return _gridView;
 }
@@ -55,7 +57,15 @@
     [super viewDidLoad];
     self.title=@"我的朋友";
     [self configUI];
-    
+    [[V2MBinder shared] registerMappings:@{
+                                           @"headImgView.image":@"logo",
+                                           @"nameLabel.text":@"name",
+                                           @"signatureLabel.text":@"signture"
+                                           } betweenView:FriendViewCell.class andVM:FriendVM.class];
+    [[V2MBinder shared] registerMappings:@{
+                                           @"headView.image":@"logo",
+                                           @"nameLabel.text":@"name"
+                                           } betweenView:FriendViewItem.class andVM:FriendVM.class];
     [[V2MBinder shared] registerMappings:@{
                                            @"datalist":@"friends",
                                            @"rmError":@"rmError",
@@ -92,7 +102,7 @@
     self.listView.hidden=!self.listView.hidden;
     self.gridView.hidden=!self.gridView.hidden;
     self.navigationItem.rightBarButtonItem.title=self.listView.hidden?@"List":@"Grid";
-    [[V2MBinder shared] unBindView:self.listView.hidden?self.listView:self.gridView];
+    [[V2MBinder shared] unBind:self.listView.hidden?self.listView:self.gridView];
     [[V2MBinder shared] bindView:self.listView.hidden?self.gridView:self.listView withVM:self.vm];
     [self.vm start];
 }

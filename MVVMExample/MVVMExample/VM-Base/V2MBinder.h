@@ -22,6 +22,6 @@
 - (void)bindView:(id)view withVM:(id)vm;
 
 //取消绑定
-- (void)unBindView:(id)view;
+- (void)unBind:(id)obj;
 
 @end

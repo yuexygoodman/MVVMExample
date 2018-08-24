@@ -36,7 +36,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:self.cellNib];
-    [[V2MBinder shared] unBindView:cell];
+    [[V2MBinder shared] unBind:cell];
     if (cell==nil) {
         NSArray * arr = [[NSBundle mainBundle] loadNibNamed:self.cellNib owner:nil options:nil];
         cell = arr.firstObject;

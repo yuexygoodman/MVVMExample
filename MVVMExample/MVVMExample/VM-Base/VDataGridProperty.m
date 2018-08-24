@@ -41,7 +41,7 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UICollectionViewCell * itemView = [collectionView dequeueReusableCellWithReuseIdentifier:self.itemNib forIndexPath:indexPath];
-    [[V2MBinder shared] unBindView:itemView];
+    [[V2MBinder shared] unBind:itemView];
     if (self.select && itemView.gestureRecognizers.count == 0) {
         itemView.userInteractionEnabled=YES;
         UILongPressGestureRecognizer * longtap=[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(selected_item:)];

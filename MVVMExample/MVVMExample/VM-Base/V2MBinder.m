@@ -61,8 +61,26 @@
     return [self.mappings objectForKey:key];
 }
 
-- (void)unBindView:(id)view {
-    
+- (void)unBind:(id)obj {
+    if (!obj)return;
+    NSMutableArray * identifiers = [NSMutableArray new];
+    for (NSString * identifier in self.bindings.allKeys) {
+        V2MBinding * binding=self.bindings[identifier];
+        if (binding.view==obj || binding.vm==obj) {
+            NSDictionary * mappings = binding.mappings;
+            for (NSString * key in mappings) {
+                id obj=[binding.view valueForKeyPath:key];
+                if (![obj isKindOfClass:[VBehavior class]]) {
+                    [binding.view removeObserver:self forKeyPath:key context:(__bridge void * _Nullable)(identifier)];
+                    [binding.vm removeObserver:self forKeyPath:mappings[key] context:(__bridge void * _Nullable)(identifier)];
+                }
+            }
+            [identifiers addObject:identifier];
+        }
+    }
+    for (NSString * identifier in identifiers) {
+        [self.bindings removeObjectForKey:identifier];
+    }
 }
 
 - (void)bindView:(id)view withVM:(id)vm {
