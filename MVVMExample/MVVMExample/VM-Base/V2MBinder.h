@@ -16,7 +16,12 @@
 //单例
 + (instancetype)shared;
 
+- (void)registerMappings:(NSDictionary *)mappings betweenView:(Class)viewClass andVM:(Class)vmClass;
+
 //绑定
-- (void)bindView:(id)view withVM:(id)vm mappings:(NSDictionary *)mappings;
+- (void)bindView:(id)view withVM:(id)vm;
+
+//取消绑定
+- (void)unBindView:(id)view;
 
 @end

@@ -12,6 +12,10 @@
 
 @property(strong,nonatomic)NSMutableDictionary * bindings;
 
+@property(strong,nonatomic)NSMutableDictionary * mappings;
+
+- (NSDictionary *)mappingsWithView:(id)view vm:(id)vm;
+
 @end
 
 @interface V2MBinding:NSObject
@@ -21,6 +25,11 @@
 @end
 
 @implementation V2MBinding
+
+- (NSDictionary *)mappings {
+    return [[V2MBinder shared] mappingsWithView:self.view vm:self.vm];
+}
+
 @end
 
 @implementation V2MBinder
@@ -32,6 +41,7 @@
         if (!ST_V2MBinder) {
             ST_V2MBinder = [V2MBinder new];
             ST_V2MBinder.bindings = [NSMutableDictionary new];
+            ST_V2MBinder.mappings = [NSMutableDictionary new];
         }
     });
     return ST_V2MBinder;
@@ -41,9 +51,21 @@
    return [NSUUID UUID];
 }
 
-- (void)bindView:(id)view withVM:(id)vm mappings:(NSDictionary *)mappings {
+- (void)registerMappings:(NSDictionary *)mappings betweenView:(Class)viewClass andVM:(Class)vmClass {
+    NSString *key = [NSString stringWithFormat:@"%@-%@",NSStringFromClass(viewClass),NSStringFromClass(vmClass)];
+    [self.mappings setObject:mappings forKey:key];
+}
+
+- (NSDictionary *)mappingsWithView:(id)view vm:(id)vm {
+    NSString *key = [NSString stringWithFormat:@"%@-%@",NSStringFromClass([view class]),NSStringFromClass([vm class])];
+    return [self.mappings objectForKey:key];
+}
+
+- (void)bindView:(id)view withVM:(id)vm {
     NSUUID * identifier =  [V2MBinder uuid];
-    NSMutableDictionary * mutiMappings = [mappings mutableCopy];
+    NSDictionary * mappings =[self mappingsWithView:view vm:vm];
+    if (mappings.count==0)return;
+    NSMutableDictionary * mutiMappings = [[self mappingsWithView:view vm:vm] mutableCopy];
     for (NSString * key in mappings.allKeys) {
         id obj=[view valueForKeyPath:key];
         if ([obj isKindOfClass:[VBehavior class]]) {
@@ -60,10 +82,10 @@
             [vm addObserver:self forKeyPath:mappings[key] options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld|NSKeyValueObservingOptionInitial context:(__bridge void * _Nullable)(identifier)];
         }
     }
+    [self registerMappings:mutiMappings betweenView:[view class] andVM:[vm class]];
     V2MBinding * binding = [V2MBinding new];
     binding.view = view;
     binding.vm = vm;
-    binding.mappings = [mutiMappings copy];
     [self.bindings setObject:binding forKey:identifier];
 }
 

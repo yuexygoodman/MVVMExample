@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "VMCommand.h"
 #import "MainViewController.h"
+#import "IViewModel.h"
 
-@interface LoginVM : NSObject
+@interface LoginVM : NSObject<IViewModel>
 
 @property(assign,nonatomic)BOOL logging;//正在登陆
 

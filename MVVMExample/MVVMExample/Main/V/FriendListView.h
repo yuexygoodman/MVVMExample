@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IFriendView.h"
+#import "VDataListProperty.h"
+#import "VAlertProperty.h"
+#import "VConfirmProperty.h"
+#import "VSelectBehavior.h"
 
-@interface FriendListView : UITableView<IFriendView>
+@interface FriendListView : UITableView
 
 - (id)initWithController:(UIViewController *)viewController;
+
+@property(strong,nonatomic)VDataListProperty * datalist;
+
+@property(strong,nonatomic)VAlertProperty * rmError;
+
+@property(strong,nonatomic)VConfirmProperty * confirm;
 
 @end

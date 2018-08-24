@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800D034C212D6C1C0060AD36 /* FriendVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D034B212D6C1C0060AD36 /* FriendVM.m */; };
+		800D034F212D6C440060AD36 /* FriendsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D034E212D6C440060AD36 /* FriendsVM.m */; };
+		800D0352212E4EB70060AD36 /* VDataListProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D0351212E4EB70060AD36 /* VDataListProperty.m */; };
+		80237C2A212E94BA00C5287F /* VDataGridProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80237C29212E94BA00C5287F /* VDataGridProperty.m */; };
+		80237C2D212E95C500C5287F /* VSelectBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 80237C2C212E95C500C5287F /* VSelectBehavior.m */; };
+		80237C31212FA9A800C5287F /* VConfirmProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80237C30212FA9A800C5287F /* VConfirmProperty.m */; };
 		80A19C952112DADE0062BA07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19C942112DADE0062BA07 /* AppDelegate.m */; };
 		80A19C9D2112DAE00062BA07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A19C9C2112DAE00062BA07 /* Assets.xcassets */; };
 		80A19CA32112DAE00062BA07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CA22112DAE00062BA07 /* main.m */; };
@@ -63,6 +69,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		800D034A212D6C1C0060AD36 /* FriendVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendVM.h; sourceTree = "<group>"; };
+		800D034B212D6C1C0060AD36 /* FriendVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendVM.m; sourceTree = "<group>"; };
+		800D034D212D6C440060AD36 /* FriendsVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsVM.h; sourceTree = "<group>"; };
+		800D034E212D6C440060AD36 /* FriendsVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsVM.m; sourceTree = "<group>"; };
+		800D0350212E4EB70060AD36 /* VDataListProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDataListProperty.h; sourceTree = "<group>"; };
+		800D0351212E4EB70060AD36 /* VDataListProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDataListProperty.m; sourceTree = "<group>"; };
+		80237C28212E94BA00C5287F /* VDataGridProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDataGridProperty.h; sourceTree = "<group>"; };
+		80237C29212E94BA00C5287F /* VDataGridProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDataGridProperty.m; sourceTree = "<group>"; };
+		80237C2B212E95C500C5287F /* VSelectBehavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSelectBehavior.h; sourceTree = "<group>"; };
+		80237C2C212E95C500C5287F /* VSelectBehavior.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSelectBehavior.m; sourceTree = "<group>"; };
+		80237C2E212F9FF000C5287F /* IViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IViewModel.h; sourceTree = "<group>"; };
+		80237C2F212FA9A800C5287F /* VConfirmProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VConfirmProperty.h; sourceTree = "<group>"; };
+		80237C30212FA9A800C5287F /* VConfirmProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VConfirmProperty.m; sourceTree = "<group>"; };
 		80A19C902112DADE0062BA07 /* MVVMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A19C932112DADE0062BA07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		80A19C942112DADE0062BA07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -342,6 +361,10 @@
 		80A19D0C2112DFC10062BA07 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				800D034A212D6C1C0060AD36 /* FriendVM.h */,
+				800D034B212D6C1C0060AD36 /* FriendVM.m */,
+				800D034D212D6C440060AD36 /* FriendsVM.h */,
+				800D034E212D6C440060AD36 /* FriendsVM.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -369,6 +392,15 @@
 				80A19D33211AF0420062BA07 /* VTouchBehavior.m */,
 				80A19D35211AF0970062BA07 /* UIButton+behavior.h */,
 				80A19D36211AF0970062BA07 /* UIButton+behavior.m */,
+				800D0350212E4EB70060AD36 /* VDataListProperty.h */,
+				800D0351212E4EB70060AD36 /* VDataListProperty.m */,
+				80237C28212E94BA00C5287F /* VDataGridProperty.h */,
+				80237C29212E94BA00C5287F /* VDataGridProperty.m */,
+				80237C2B212E95C500C5287F /* VSelectBehavior.h */,
+				80237C2C212E95C500C5287F /* VSelectBehavior.m */,
+				80237C2E212F9FF000C5287F /* IViewModel.h */,
+				80237C2F212FA9A800C5287F /* VConfirmProperty.h */,
+				80237C30212FA9A800C5287F /* VConfirmProperty.m */,
 			);
 			path = "VM-Base";
 			sourceTree = "<group>";
@@ -517,11 +549,14 @@
 				80A19D0A2112DC3D0062BA07 /* BaseModel.m in Sources */,
 				80A19D1F211843030062BA07 /* V2MBinder.m in Sources */,
 				80A19D2B211ADEF80062BA07 /* VAlertProperty.m in Sources */,
+				800D034F212D6C440060AD36 /* FriendsVM.m in Sources */,
 				80A19D122113FE310062BA07 /* LoginDataConverter.m in Sources */,
 				80A19D34211AF0420062BA07 /* VTouchBehavior.m in Sources */,
 				80A19D002112DC3D0062BA07 /* MainViewController.m in Sources */,
 				80A19D0F2112E6170062BA07 /* LoginVM.m in Sources */,
+				80237C2D212E95C500C5287F /* VSelectBehavior.m in Sources */,
 				80A19D222119A5090062BA07 /* VProperty.m in Sources */,
+				800D034C212D6C1C0060AD36 /* FriendVM.m in Sources */,
 				80A19CFF2112DC3D0062BA07 /* FriendGridView.m in Sources */,
 				80A19D052112DC3D0062BA07 /* FriendPresenter.m in Sources */,
 				80A19D3E211C33350062BA07 /* LogViewController.m in Sources */,
@@ -534,6 +569,8 @@
 				80A19CFE2112DC3D0062BA07 /* FriendListView.m in Sources */,
 				80A19D022112DC3D0062BA07 /* FriendViewItem.m in Sources */,
 				80A19D1C211842A80062BA07 /* VBehavior.m in Sources */,
+				80237C31212FA9A800C5287F /* VConfirmProperty.m in Sources */,
+				80237C2A212E94BA00C5287F /* VDataGridProperty.m in Sources */,
 				80A19CFC2112DC3D0062BA07 /* Friend.m in Sources */,
 				80A19CF92112DC3D0062BA07 /* Me.m in Sources */,
 				80A19D25211ABFC50062BA07 /* LoginView.m in Sources */,
@@ -543,6 +580,7 @@
 				80A19C952112DADE0062BA07 /* AppDelegate.m in Sources */,
 				80A19D28211AD9700062BA07 /* VLoadingProperty.m in Sources */,
 				80A19D062112DC3D0062BA07 /* LoginModel.m in Sources */,
+				800D0352212E4EB70060AD36 /* VDataListProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

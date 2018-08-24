@@ -39,18 +39,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.loginView];
-    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[V2MBinder shared] registerMappings:@{
+                                               @"accountField.text":@"account",
+                                               @"pwdField.text":@"password",
+                                               @"loginBtn.touch":@"login",
+                                               @"logging":@"logging",
+                                               @"logErr":@"logErr",
+                                               @"toMain":@"main"
+                                               } betweenView:LoginView.class andVM:LoginVM.class];
+    });
     [[V2MBinder shared]
      bindView:self.loginView
-     withVM:self.vm
-     mappings:@{
-                @"accountField.text":@"account",
-                @"pwdField.text":@"password",
-                @"loginBtn.touch":@"login",
-                @"logging":@"logging",
-                @"logErr":@"logErr",
-                @"toMain":@"main"
-                }];
+     withVM:self.vm];
     [self.vm start];
 }
 
