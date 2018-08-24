@@ -13,6 +13,7 @@
 		80237C2A212E94BA00C5287F /* VDataGridProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80237C29212E94BA00C5287F /* VDataGridProperty.m */; };
 		80237C2D212E95C500C5287F /* VSelectBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 80237C2C212E95C500C5287F /* VSelectBehavior.m */; };
 		80237C31212FA9A800C5287F /* VConfirmProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80237C30212FA9A800C5287F /* VConfirmProperty.m */; };
+		80237C35212FF09800C5287F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80237C33212FF09800C5287F /* MainViewController.m */; };
 		80A19C952112DADE0062BA07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19C942112DADE0062BA07 /* AppDelegate.m */; };
 		80A19C9D2112DAE00062BA07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A19C9C2112DAE00062BA07 /* Assets.xcassets */; };
 		80A19CA32112DAE00062BA07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CA22112DAE00062BA07 /* main.m */; };
@@ -26,12 +27,10 @@
 		80A19CFD2112DC3D0062BA07 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CD32112DC3D0062BA07 /* FriendModel.m */; };
 		80A19CFE2112DC3D0062BA07 /* FriendListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CD52112DC3D0062BA07 /* FriendListView.m */; };
 		80A19CFF2112DC3D0062BA07 /* FriendGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CD62112DC3D0062BA07 /* FriendGridView.m */; };
-		80A19D002112DC3D0062BA07 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CD92112DC3D0062BA07 /* MainViewController.m */; };
 		80A19D012112DC3D0062BA07 /* FriendViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A19CDA2112DC3D0062BA07 /* FriendViewItem.xib */; };
 		80A19D022112DC3D0062BA07 /* FriendViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CDE2112DC3D0062BA07 /* FriendViewItem.m */; };
 		80A19D032112DC3D0062BA07 /* FriendViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CDF2112DC3D0062BA07 /* FriendViewCell.m */; };
 		80A19D042112DC3D0062BA07 /* FriendViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A19CE12112DC3D0062BA07 /* FriendViewCell.xib */; };
-		80A19D052112DC3D0062BA07 /* FriendPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CE32112DC3D0062BA07 /* FriendPresenter.m */; };
 		80A19D062112DC3D0062BA07 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CE82112DC3D0062BA07 /* LoginModel.m */; };
 		80A19D082112DC3D0062BA07 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A19CEE2112DC3D0062BA07 /* LoginView.xib */; };
 		80A19D0A2112DC3D0062BA07 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A19CF62112DC3D0062BA07 /* BaseModel.m */; };
@@ -82,6 +81,8 @@
 		80237C2E212F9FF000C5287F /* IViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IViewModel.h; sourceTree = "<group>"; };
 		80237C2F212FA9A800C5287F /* VConfirmProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VConfirmProperty.h; sourceTree = "<group>"; };
 		80237C30212FA9A800C5287F /* VConfirmProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VConfirmProperty.m; sourceTree = "<group>"; };
+		80237C33212FF09800C5287F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		80237C34212FF09800C5287F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		80A19C902112DADE0062BA07 /* MVVMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A19C932112DADE0062BA07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		80A19C942112DADE0062BA07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,18 +111,12 @@
 		80A19CD62112DC3D0062BA07 /* FriendGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGridView.m; sourceTree = "<group>"; };
 		80A19CD72112DC3D0062BA07 /* FriendViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewCell.h; sourceTree = "<group>"; };
 		80A19CD82112DC3D0062BA07 /* FriendViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewItem.h; sourceTree = "<group>"; };
-		80A19CD92112DC3D0062BA07 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		80A19CDA2112DC3D0062BA07 /* FriendViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendViewItem.xib; sourceTree = "<group>"; };
 		80A19CDB2112DC3D0062BA07 /* FriendListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListView.h; sourceTree = "<group>"; };
-		80A19CDC2112DC3D0062BA07 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		80A19CDD2112DC3D0062BA07 /* IFriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFriendView.h; sourceTree = "<group>"; };
 		80A19CDE2112DC3D0062BA07 /* FriendViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewItem.m; sourceTree = "<group>"; };
 		80A19CDF2112DC3D0062BA07 /* FriendViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewCell.m; sourceTree = "<group>"; };
 		80A19CE02112DC3D0062BA07 /* FriendGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGridView.h; sourceTree = "<group>"; };
 		80A19CE12112DC3D0062BA07 /* FriendViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendViewCell.xib; sourceTree = "<group>"; };
-		80A19CE32112DC3D0062BA07 /* FriendPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendPresenter.m; sourceTree = "<group>"; };
-		80A19CE42112DC3D0062BA07 /* IFriendPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFriendPresenter.h; sourceTree = "<group>"; };
-		80A19CE52112DC3D0062BA07 /* FriendPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPresenter.h; sourceTree = "<group>"; };
 		80A19CE82112DC3D0062BA07 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		80A19CE92112DC3D0062BA07 /* ILoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILoginModel.h; sourceTree = "<group>"; };
 		80A19CEA2112DC3D0062BA07 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
@@ -184,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80237C32212FF09800C5287F /* C */ = {
+			isa = PBXGroup;
+			children = (
+				80237C34212FF09800C5287F /* MainViewController.h */,
+				80237C33212FF09800C5287F /* MainViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
 		80A19C872112DADE0062BA07 = {
 			isa = PBXGroup;
 			children = (
@@ -258,10 +262,10 @@
 		80A19CCF2112DC3D0062BA07 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				80237C32212FF09800C5287F /* C */,
 				80A19D0C2112DFC10062BA07 /* VM */,
 				80A19CD02112DC3D0062BA07 /* M */,
 				80A19CD42112DC3D0062BA07 /* V */,
-				80A19CE22112DC3D0062BA07 /* P */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -279,31 +283,18 @@
 		80A19CD42112DC3D0062BA07 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				80A19CD52112DC3D0062BA07 /* FriendListView.m */,
-				80A19CD62112DC3D0062BA07 /* FriendGridView.m */,
-				80A19CD72112DC3D0062BA07 /* FriendViewCell.h */,
-				80A19CD82112DC3D0062BA07 /* FriendViewItem.h */,
-				80A19CD92112DC3D0062BA07 /* MainViewController.m */,
-				80A19CDA2112DC3D0062BA07 /* FriendViewItem.xib */,
 				80A19CDB2112DC3D0062BA07 /* FriendListView.h */,
-				80A19CDC2112DC3D0062BA07 /* MainViewController.h */,
-				80A19CDD2112DC3D0062BA07 /* IFriendView.h */,
-				80A19CDE2112DC3D0062BA07 /* FriendViewItem.m */,
+				80A19CD52112DC3D0062BA07 /* FriendListView.m */,
+				80A19CD72112DC3D0062BA07 /* FriendViewCell.h */,
 				80A19CDF2112DC3D0062BA07 /* FriendViewCell.m */,
-				80A19CE02112DC3D0062BA07 /* FriendGridView.h */,
 				80A19CE12112DC3D0062BA07 /* FriendViewCell.xib */,
+				80A19CE02112DC3D0062BA07 /* FriendGridView.h */,
+				80A19CD62112DC3D0062BA07 /* FriendGridView.m */,
+				80A19CD82112DC3D0062BA07 /* FriendViewItem.h */,
+				80A19CDE2112DC3D0062BA07 /* FriendViewItem.m */,
+				80A19CDA2112DC3D0062BA07 /* FriendViewItem.xib */,
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		80A19CE22112DC3D0062BA07 /* P */ = {
-			isa = PBXGroup;
-			children = (
-				80A19CE32112DC3D0062BA07 /* FriendPresenter.m */,
-				80A19CE42112DC3D0062BA07 /* IFriendPresenter.h */,
-				80A19CE52112DC3D0062BA07 /* FriendPresenter.h */,
-			);
-			path = P;
 			sourceTree = "<group>";
 		};
 		80A19CE62112DC3D0062BA07 /* Login */ = {
@@ -552,19 +543,18 @@
 				800D034F212D6C440060AD36 /* FriendsVM.m in Sources */,
 				80A19D122113FE310062BA07 /* LoginDataConverter.m in Sources */,
 				80A19D34211AF0420062BA07 /* VTouchBehavior.m in Sources */,
-				80A19D002112DC3D0062BA07 /* MainViewController.m in Sources */,
 				80A19D0F2112E6170062BA07 /* LoginVM.m in Sources */,
 				80237C2D212E95C500C5287F /* VSelectBehavior.m in Sources */,
 				80A19D222119A5090062BA07 /* VProperty.m in Sources */,
 				800D034C212D6C1C0060AD36 /* FriendVM.m in Sources */,
 				80A19CFF2112DC3D0062BA07 /* FriendGridView.m in Sources */,
-				80A19D052112DC3D0062BA07 /* FriendPresenter.m in Sources */,
 				80A19D3E211C33350062BA07 /* LogViewController.m in Sources */,
 				80A19D2E211AE25A0062BA07 /* VNavProperty.m in Sources */,
 				80A19D37211AF0970062BA07 /* UIButton+behavior.m in Sources */,
 				80A19D31211AEC700062BA07 /* VEditBehavior.m in Sources */,
 				80A19CFA2112DC3D0062BA07 /* User.m in Sources */,
 				80A19CFD2112DC3D0062BA07 /* FriendModel.m in Sources */,
+				80237C35212FF09800C5287F /* MainViewController.m in Sources */,
 				80A19D1621183AEE0062BA07 /* VMCommand.m in Sources */,
 				80A19CFE2112DC3D0062BA07 /* FriendListView.m in Sources */,
 				80A19D022112DC3D0062BA07 /* FriendViewItem.m in Sources */,

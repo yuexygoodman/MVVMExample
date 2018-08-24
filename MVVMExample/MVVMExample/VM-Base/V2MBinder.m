@@ -61,6 +61,10 @@
     return [self.mappings objectForKey:key];
 }
 
+- (void)unBindView:(id)view {
+    
+}
+
 - (void)bindView:(id)view withVM:(id)vm {
     NSUUID * identifier =  [V2MBinder uuid];
     NSDictionary * mappings =[self mappingsWithView:view vm:vm];
