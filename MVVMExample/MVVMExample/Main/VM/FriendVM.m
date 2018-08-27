@@ -13,7 +13,9 @@
 @property(strong,nonatomic)Friend * friend;
 
 @end
-
+/**
+ viewmodel与model之间的绑定并没有去实现，实在闲麻烦。
+ */
 @implementation FriendVM
 
 - (id)initWithFriend:(Friend *)friend {

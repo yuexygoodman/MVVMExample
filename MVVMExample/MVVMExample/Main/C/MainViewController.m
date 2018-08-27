@@ -91,6 +91,7 @@
 ///MARK: 组织子视图
 - (void)configUI {
     self.view.backgroundColor=[UIColor whiteColor];
+    //原则上说，视图切换也应该用binding来实现，但是由于这不是主要功能，又为了图方便，这里就用最直接的方式来做了。
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Grid" style:UIBarButtonItemStylePlain target:self action:@selector(toChangeLayout:)];
 
     [self.view addSubview:self.listView];
