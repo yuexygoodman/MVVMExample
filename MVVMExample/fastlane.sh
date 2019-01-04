@@ -1,1 +1,1 @@
-fastlane iosDebug
+fastlane GIMBetaRelease
