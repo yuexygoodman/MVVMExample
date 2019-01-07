@@ -24,6 +24,8 @@ platform :ios do
     lane :GIMBetaRelease do
 
     	increment_build_number
+    	commit_version_bump
+    	push_to_git_remote
   		
   	end
 
