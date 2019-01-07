@@ -1,2 +1,2 @@
 source /etc/profile
-fastlane GIMBetaRelease
+fastlane MVVM
